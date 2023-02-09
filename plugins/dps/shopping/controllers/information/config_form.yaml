@@ -1,0 +1,10 @@
+name: Information
+form: $/dps/shopping/models/information/fields.yaml
+modelClass: Dps\Shopping\Models\Information
+defaultRedirect: dps/shopping/information
+create:
+    redirect: 'dps/shopping/information/update/:id'
+    redirectClose: dps/shopping/information
+update:
+    redirect: dps/shopping/information
+    redirectClose: dps/shopping/information

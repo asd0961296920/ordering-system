@@ -1,0 +1,194 @@
+==
+<?php
+
+
+function onStart()
+{
+    $user = Auth::getUser();
+    if($user){
+    $this['cc'] = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('accountname', '=', $user->name)
+    ->get();	
+}
+
+    
+}
+
+
+
+==
+<div class="member">
+<!--會員資料的查詢與修改-->
+
+
+    {% for post in cc %}
+
+
+    <form id="data_form3" class="fdd" data-request="onFccc">
+
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">會員名稱:</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{post.accountname}}">
+        </div>
+      </div>
+      
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">會員電話:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" name="cellphone" value="{{post.cellphone}}">
+            </div>
+          </div>
+
+
+
+          <div class="mb-3 row">
+
+            <label for="inputPassword"  class="col-sm-2 col-form-label">送貨地點：</label>
+            <div class="col-sm-10">
+            <select  name="add"  aria-label="Default select example" class="form-select">
+                <option value="高雄市鳳山區11巷11弄11號(鳳山分店)">高雄市鳳山區11巷11弄11號(鳳山分店)</option>
+                <option value="高雄市苓雅區22巷2弄22號(苓雅分店)">高雄市苓雅區22巷2弄22號(苓雅分店)</option>
+                <option value="高雄市旗山區33巷33弄33號(旗山分店)">高雄市鳳山區33巷33弄33號(旗山分店)</option>
+                <option value="台北市忠孝東路111號(忠孝東路分店)">台北市忠孝東路111號(忠孝東路分店</option>
+                <option value="台中市逢甲區11巷11弄11號(逢甲分店)">台中市逢甲區11巷11弄11號(逢甲分店)</option>
+
+            </select>
+          </div>
+        </div>
+
+
+
+
+
+
+<!--
+
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">會員住址:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" name="add" value="{{post.address}}">
+            </div>
+          </div>
+-->
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">會員年齡:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" name="old" value="{{post.old}}">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">會員血型:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" name="blood" value="{{post.blood}}">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">最近一餐熱量攝取:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" name="blood" value="{{post.blood}}">
+            </div>
+          </div>
+         
+         
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">會員性別:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" name="gender" value="{{post.gender}}">
+            </div>
+          </div>
+
+
+</form>
+<button type="submit" id="wss" class="btn btn-outline-secondary">修改資料</button>
+
+
+
+
+
+
+
+
+<script>
+  $(document).ready(function(){
+$("#wss").click(function(){
+  $('#data_form3').request('onFccc', {
+      success: function() {
+
+          Swal.fire({
+    title: '資料已修改',
+    text: '',
+    icon: 'success',
+    confirmButtonText: '完成'
+  });
+
+      }
+  })
+
+});
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+{% endfor %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

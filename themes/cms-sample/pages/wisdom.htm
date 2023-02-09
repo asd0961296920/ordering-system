@@ -1,0 +1,448 @@
+title = "wisdom"
+url = "/wisdom"
+layout = "default"
+is_hidden = 0
+==
+<?php
+
+function onStart()
+{
+    
+
+
+
+
+
+
+}
+
+
+function onFonvenient()
+{
+    $user = Auth::getUser();
+
+    $namefood1 = input('namefood1');
+    $nameid1 = input('nameid1');
+
+    $namefood2 = input('namefood2');
+    $nameid2 = input('nameid2');
+    $namefood3 = input('namefood3');
+    $nameid3 = input('nameid3');
+    $namefood4 = input('namefood4');
+    $nameid4 = input('nameid4');
+    $namefood5 = input('namefood5');
+    $nameid5 = input('nameid5');
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $dateee = date("mdHis");
+    $usernumber = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('accountname', '=', $user->name)
+    ->get();	
+    
+    foreach ($usernumber as $usernumber) {
+
+        $ccnumber = $usernumber ->serialnumber;
+    }
+
+
+
+
+
+    Db::table('dps_shopping_commodity')->insert([
+    ['commodityname' => $nameid1,'number' => '1','money' => '140','username' => $ccnumber ,'nature' => '便當','bentonumber' => $dateee,'cookname'=> $namefood1]
+    ]);
+
+    Db::table('dps_shopping_commodity')->insert([
+    ['commodityname' => $nameid2,'number' => '1','money' => '0','username' => $ccnumber ,'nature' => '便當','bentonumber' => $dateee,'cookname'=> $namefood2]
+    ]);
+
+    Db::table('dps_shopping_commodity')->insert([
+    ['commodityname' => $nameid3,'number' => '1','money' => '0','username' => $ccnumber ,'nature' => '便當','bentonumber' => $dateee,'cookname'=> $namefood3]
+    ]);
+
+    Db::table('dps_shopping_commodity')->insert([
+    ['commodityname' => $nameid4,'number' => '1','money' => '0','username' => $ccnumber ,'nature' => '便當','bentonumber' => $dateee,'cookname'=> $namefood4]
+    ]);
+
+    Db::table('dps_shopping_commodity')->insert([
+    ['commodityname' => $nameid5,'number' => '1','money' => '0','username' => $ccnumber ,'nature' => '便當','bentonumber' => $dateee,'cookname'=> $namefood5]
+    ]);
+
+}
+
+
+?>
+==
+
+<div class="atuo">
+
+
+    <div class="banner"></div>
+    
+        <div class="tt">
+        <h1>三夜草新概念健康餐盒</h1>
+    </div>
+    
+    <div class="man">
+<script>
+$(document).ready(function(){
+    $("#c001").click(function(){
+        $(".can1").fadeOut(100);
+  });
+  $("#c001").click(function(){
+        $(".can2").fadeIn(500);
+
+  });
+    
+  $("#c002").click(function(){
+        $(".can2").fadeOut(100);
+
+  });
+  $("#c002").click(function(){
+        $(".can3").fadeIn(500);
+  });
+  $("#c003").click(function(){
+        $(".can3").fadeOut(100);
+
+  });
+  $("#c003").click(function(){
+        $(".can4").fadeIn(500);
+  });
+
+  $("#c004").click(function(){
+        $(".can4").fadeOut(100);
+
+  });
+  $("#c004").click(function(){
+        $(".can5").fadeIn(500);
+ });
+
+  $("#c006").click(function(){
+
+    location.reload();
+
+  });
+
+
+
+  $("#c004").click(function(){
+    var c1 =  $("input[name='c01']:checked").val(); 
+    var c2 =  $("input[name='c02']:checked").val(); 
+    var c3 =  $("input[name='c03']:checked").val(); 
+if(c1 == '健康' && c3 == '菜'){
+
+    $("#q01").fadeIn(500);
+
+
+    
+}else if(c1 == '炸物'&& c2=='辣'){
+  $("#q02").fadeIn(500);
+}
+
+
+
+
+  });
+
+
+
+  $("#d01").click(function(){
+    $('#data_form1').request('onFonvenient', {
+        success: function() {
+
+            Swal.fire({
+		  title: '訂單已成立',
+		  text: '出貨時請到您選擇的地點領取，可以在訂單紀錄中查詢訂單狀態，要更改每次出貨地點請到個人資料修改',
+		  icon: 'success',
+		  confirmButtonText: '完成'
+		});
+
+        }
+    })
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+</script>
+
+<div class="all">
+
+
+
+        <div class="can1">
+
+
+
+<div class="card text-center">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">不知道要吃什麼嗎?讓我來幫您挑選吧</h5>
+     
+      <button id="c001" type="button" class="btn btn-primary">選擇</button>
+    </div>
+    <div class="card-footer text-muted">
+
+    </div>
+  </div>
+
+
+        </div>
+
+        <div class="can2" style="display: none;">
+
+            
+            <div class="card">
+                <h5 class="card-header">想吃哪一類?</h5>
+                <div class="card-body">
+
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="c01" value="健康" id="flexRadioDefault1"checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      健康低熱量
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="c01" value="炸物" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      好吃炸物
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="c01" value="減肥" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      減肥餐
+                    </label>
+                  </div>
+                  
+                  <button id="c002" type="button" class="btn btn-primary">選擇</button>
+
+                </div>
+              </div>
+
+
+
+
+              
+                    </div>
+
+
+                    <div class="can3" style="display: none;">
+
+            
+                        <div class="card">
+                            <h5 class="card-header">Featured</h5>
+                            <div class="card-body">
+                                                   
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="c02" value="辣" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      辣的
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="c02" value="不辣" id="flexRadioDefault1"checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      不辣的
+                                    </label>
+                                  </div>  
+                              
+                              
+                              <button id="c003" type="button" class="btn btn-primary">選擇</button>
+            
+                            </div>
+                          </div>
+            
+            
+            
+            
+                          
+                                </div>
+
+                                <div class="can4" style="display: none;">
+
+            
+                                    <div class="card">
+                                        <h5 class="card-header">Featured</h5>
+                                        <div class="card-body">
+                                                               
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"name="c03" value="菜" id="flexRadioDefault1"checked>
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                  菜多
+                                                </label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="c03" value="肉" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                  肉多
+                                                </label>
+                                              </div>  
+                                          
+                                          
+                                          <button id="c004" type="button" class="btn btn-primary">選擇</button>
+                        
+                                        </div>
+                                      </div>
+                        
+                        
+                        
+                        
+                                      
+                                            </div>
+
+                                            <div class="can5" style="display: none;">
+
+            
+                                                <div class="card">
+                                                    <h5 class="card-header">Featured</h5>
+                                                    <div class="card-body">
+                                                                           
+                                                        <div class="card text-center" style="width: 18rem;">
+                                                            <div class="card-body">
+                                                              <h5 class="card-title">為您特製的便當</h5>
+                                                              
+                                                              
+                                                              
+                                                            <div id="q01" style="display: none; margin: 10px 0;">
+                                                                <form id="data_form1" data-request="onFonvenient">
+                                                            <p>主食:紫米飯</p>
+                                                            <p>主菜:健康鱈魚</p>
+                                                            <p>配菜:炒高麗菜，鮮拌海帶芽，炒青椒</p>
+                                                            
+                                                            <input  type="hidden" name="namefood1" value="紫米飯"> 
+                                                            <input  type="hidden" name="nameid1" value='6'>  
+                                                            <input  type="hidden" name="namefood2" value="鱈魚"> 
+                                                            <input  type="hidden" name="nameid2" value='35'>
+                                                            <input  type="hidden" name="namefood3" value="炒高麗菜"> 
+                                                            <input  type="hidden" name="nameid3" value='30'>
+                                                            <input  type="hidden" name="namefood4" value="鮮拌海帶芽"> 
+                                                            <input  type="hidden" name="nameid4" value='7'>
+                                                            <input  type="hidden" name="namefood5" value="炒青椒"> 
+                                                            <input  type="hidden" name="nameid5" value='36'>
+                                                        </form>
+                                                        <button id="d01" type="button" class="btn btn-primary">立刻購買</button>
+                                                            </div>
+
+                                                            <div id="q02" style="display: none; margin: 10px 0;">
+                                                              <form id="data_form2" data-request="onFonvenient">
+                                                                <p>主食:白米飯</p>
+                                                                <p>主菜:超好吃炸雞腿</p>
+                                                                <p>配菜:麻婆豆腐，滑蛋蝦仁，台式泡菜</p>
+                                                                
+                                                                <input  type="hidden" name="namefood1" value="白飯"> 
+                                                                <input  type="hidden" name="nameid1" value='3'>  
+                                                                <input  type="hidden" name="namefood2" value="超好吃炸雞腿"> 
+                                                                <input  type="hidden" name="nameid2" value='33'>
+                                                                <input  type="hidden" name="namefood3" value="麻婆豆腐"> 
+                                                                <input  type="hidden" name="nameid3" value='32'>
+                                                                <input  type="hidden" name="namefood4" value="滑蛋蝦仁"> 
+                                                                <input  type="hidden" name="nameid4" value='31'>
+                                                                <input  type="hidden" name="namefood5" value="台式泡菜"> 
+                                                                <input  type="hidden" name="nameid5" value='2'>
+                                                            </form>
+                                                            <button id="d01" type="button" class="btn btn-primary">立刻購買</button>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            </div>
+
+                                                            <div id="" style="display: none; margin: 10px 0;">
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            </div>
+
+
+                                                            <div id="" style="display: none; margin: 10px 0;">
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            </div>
+
+
+
+
+                                                              
+                                                              
+
+                                                              <button id="c006" type="button" class="btn btn-primary">重新選擇</button>
+                                                            </div>
+                                                          </div>
+                                                      
+                                                      
+                                                      
+    
+                                                    </div>
+                                                  </div>
+                                    
+                                    
+                                    
+                                    
+                                                  
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+    </div>
+</div>

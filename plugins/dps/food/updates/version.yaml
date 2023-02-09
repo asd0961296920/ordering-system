@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dps_food_cook'
+    - builder_table_create_dps_food_cook.php
+1.0.3:
+    - 'Updated table dps_food_cook'
+    - builder_table_update_dps_food_cook.php
+1.0.4:
+    - 'Updated table dps_food_cook'
+    - builder_table_update_dps_food_cook_2.php
+1.0.5:
+    - 'Created table dps_food_rabbit'
+    - builder_table_create_dps_food_rabbit.php
+1.0.6:
+    - 'Updated table dps_food_rabbit'
+    - builder_table_update_dps_food_rabbits.php
+1.0.7:
+    - 'Updated table dps_food_rabbits'
+    - builder_table_update_dps_food_rabbitess.php
+1.0.8:
+    - 'Updated table dps_food_rabbitess'
+    - builder_table_update_dps_food_rabbiteass.php
+1.0.9:
+    - 'Updated table dps_food_cook'
+    - builder_table_update_dps_food_cook_3.php
+1.0.10:
+    - 'Updated table dps_food_cook'
+    - builder_table_update_dps_food_cook_4.php

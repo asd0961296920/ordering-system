@@ -1,0 +1,10 @@
+name: Cook
+form: $/dps/food/models/cook/fields.yaml
+modelClass: Dps\Food\Models\Cook
+defaultRedirect: dps/food/cook
+create:
+    redirect: 'dps/food/cook/update/:id'
+    redirectClose: dps/food/cook
+update:
+    redirect: dps/food/cook
+    redirectClose: dps/food/cook

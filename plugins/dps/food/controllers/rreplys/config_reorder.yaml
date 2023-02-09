@@ -1,0 +1,4 @@
+title: Rreplys
+modelClass: Dps\Food\Models\Rabbits
+toolbar:
+    buttons: reorder_toolbar

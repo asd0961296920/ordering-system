@@ -1,0 +1,4 @@
+title: Historys
+modelClass: Dps\Order\Models\History
+toolbar:
+    buttons: reorder_toolbar

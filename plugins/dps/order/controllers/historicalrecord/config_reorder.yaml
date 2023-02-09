@@ -1,0 +1,4 @@
+title: Historicalrecord
+modelClass: Dps\Order\Models\Historicalrecord
+toolbar:
+    buttons: reorder_toolbar

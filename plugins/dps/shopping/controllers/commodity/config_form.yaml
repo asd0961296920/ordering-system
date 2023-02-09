@@ -1,0 +1,10 @@
+name: Commodity
+form: $/dps/shopping/models/shop/fields.yaml
+modelClass: Dps\Shopping\Models\Shop
+defaultRedirect: dps/shopping/commodity
+create:
+    redirect: 'dps/shopping/commodity/update/:id'
+    redirectClose: dps/shopping/commodity
+update:
+    redirect: dps/shopping/commodity
+    redirectClose: dps/shopping/commodity

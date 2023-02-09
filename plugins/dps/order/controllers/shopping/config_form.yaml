@@ -1,0 +1,10 @@
+name: Shopping
+form: $/dps/order/models/record/fields.yaml
+modelClass: Dps\Order\Models\Record
+defaultRedirect: dps/order/shopping
+create:
+    redirect: 'dps/order/shopping/update/:id'
+    redirectClose: dps/order/shopping
+update:
+    redirect: dps/order/shopping
+    redirectClose: dps/order/shopping

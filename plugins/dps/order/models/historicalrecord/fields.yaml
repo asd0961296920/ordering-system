@@ -1,0 +1,13 @@
+fields:
+    username:
+        label: username
+        span: auto
+        type: text
+    address:
+        label: address
+        span: auto
+        type: text
+    date:
+        label: date
+        span: auto
+        type: text

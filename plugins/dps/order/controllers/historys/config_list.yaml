@@ -1,0 +1,12 @@
+list: $/dps/order/models/history/columns.yaml
+modelClass: Dps\Order\Models\History
+title: Historys
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dps/order/historys/update/:id'

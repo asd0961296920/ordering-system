@@ -1,0 +1,20 @@
+plugin:
+    name: 'dps.shopping::lang.plugin.name'
+    description: 'dps.shopping::lang.plugin.description'
+    author: dps
+    icon: oc-icon-ambulance
+    homepage: ''
+navigation:
+    shop:
+        label: shop
+        url: dps/shopping/commodity
+        icon: icon-life-ring
+        sideMenu:
+            shop:
+                label: shop
+                url: dps/shopping/commodity
+                icon: icon-sitemap
+            information:
+                label: information
+                url: dps/shopping/information
+                icon: icon-sitemap

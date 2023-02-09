@@ -1,0 +1,10 @@
+name: Rreplys
+form: $/dps/food/models/rabbits/fields.yaml
+modelClass: Dps\Food\Models\Rabbits
+defaultRedirect: dps/food/rreplys
+create:
+    redirect: 'dps/food/rreplys/update/:id'
+    redirectClose: dps/food/rreplys
+update:
+    redirect: dps/food/rreplys
+    redirectClose: dps/food/rreplys

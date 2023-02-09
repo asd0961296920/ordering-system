@@ -1,0 +1,10 @@
+name: Historys
+form: $/dps/order/models/history/fields.yaml
+modelClass: Dps\Order\Models\History
+defaultRedirect: dps/order/historys
+create:
+    redirect: 'dps/order/historys/update/:id'
+    redirectClose: dps/order/historys
+update:
+    redirect: dps/order/historys
+    redirectClose: dps/order/historys

@@ -1,0 +1,216 @@
+1646726081a:1:{s:6:"on.htm";a:9:{s:8:"fileName";s:6:"on.htm";s:7:"content";s:2800:"title = "on"
+url = "/on"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use RainLab\User\Facades\Auth;
+use October\Rain\Database\ModelException;
+
+function onStart()
+{
+
+}
+
+function onFormSubmit()
+{
+	// 確認帳號密碼是否正確,不正確回答不正確
+	Event::listen('rainlab.user.login', function($user) {
+		// print($user);
+		$this['have_login'] = true;
+	});
+
+    $account = input('account');
+	$password = input('password');
+
+	try{
+		$user = Auth::authenticate([
+			'login' => $account,
+			'password' => $password
+		]);
+	}
+	catch(\October\Rain\Auth\AuthException $ex){
+		$this['have_login'] = false;
+	}
+}
+?>
+==
+
+{% if user %}
+	<script>
+		window.location.href = "/food/order";
+	</script>
+{% endif %}
+<!--會員登入頁面-->
+<script type="text/javascript">
+    $(function() {
+        $('.atuo').fadeIn();
+      })
+    </script>
+    
+    <div class="atuo">
+    
+    
+    <div class="banner"></div>
+    
+        <div class="tt">
+        <h1>三夜草新概念健康餐盒</h1>
+    </div>
+    
+    <div class="man">
+
+        
+        <script type="text/javascript">
+          var time=500;
+ $(function() {
+    $("#register").click(function(){
+                  $('.atuo').fadeOut();
+                  setTimeout("top.location.href = '/food/register' ",time);
+                });
+})
+</script>
+
+        <div class="online">
+
+            <form id="data_form" data-request="onFormSubmit" data-request-update="result: '#ajaxDiv'">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">帳號</span>
+                    </div>
+                    <input name="account" type="text" class="form-control">
+                </div>
+            
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">密碼</span>
+                    </div>
+                    <input name="password" type="password" class="form-control">
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                            登入
+                        </button>
+                        
+                    </div>
+                </div>
+            
+            </form>
+            <button id="register" class="bb btn-outline-primary my-5 px-5" style="border-radius:38px">
+                註冊
+            </button>
+            <div id="ajaxDiv"></div>
+            </div>
+    
+
+
+
+
+
+    </div>
+    
+    </div>
+";s:5:"mtime";i:1640674340;s:6:"markup";s:2146:"{% if user %}
+	<script>
+		window.location.href = "/food/order";
+	</script>
+{% endif %}
+<!--會員登入頁面-->
+<script type="text/javascript">
+    $(function() {
+        $('.atuo').fadeIn();
+      })
+    </script>
+    
+    <div class="atuo">
+    
+    
+    <div class="banner"></div>
+    
+        <div class="tt">
+        <h1>三夜草新概念健康餐盒</h1>
+    </div>
+    
+    <div class="man">
+
+        
+        <script type="text/javascript">
+          var time=500;
+ $(function() {
+    $("#register").click(function(){
+                  $('.atuo').fadeOut();
+                  setTimeout("top.location.href = '/food/register' ",time);
+                });
+})
+</script>
+
+        <div class="online">
+
+            <form id="data_form" data-request="onFormSubmit" data-request-update="result: '#ajaxDiv'">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">帳號</span>
+                    </div>
+                    <input name="account" type="text" class="form-control">
+                </div>
+            
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">密碼</span>
+                    </div>
+                    <input name="password" type="password" class="form-control">
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                            登入
+                        </button>
+                        
+                    </div>
+                </div>
+            
+            </form>
+            <button id="register" class="bb btn-outline-primary my-5 px-5" style="border-radius:38px">
+                註冊
+            </button>
+            <div id="ajaxDiv"></div>
+            </div>
+    
+
+
+
+
+
+    </div>
+    
+    </div>";s:4:"code";s:567:"use RainLab\User\Facades\Auth;
+use October\Rain\Database\ModelException;
+
+function onStart()
+{
+
+}
+
+function onFormSubmit()
+{
+	// 確認帳號密碼是否正確,不正確回答不正確
+	Event::listen('rainlab.user.login', function($user) {
+		// print($user);
+		$this['have_login'] = true;
+	});
+
+    $account = input('account');
+	$password = input('password');
+
+	try{
+		$user = Auth::authenticate([
+			'login' => $account,
+			'password' => $password
+		]);
+	}
+	catch(\October\Rain\Auth\AuthException $ex){
+		$this['have_login'] = false;
+	}
+}";s:5:"title";s:2:"on";s:3:"url";s:3:"/on";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

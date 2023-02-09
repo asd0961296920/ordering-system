@@ -1,0 +1,308 @@
+1646726081a:1:{s:12:"register.htm";a:9:{s:8:"fileName";s:12:"register.htm";s:7:"content";s:3997:"title = "register"
+url = "/register"
+layout = "default"
+is_hidden = 0
+==
+<?php
+//註冊新帳號
+function onFormSubmit()
+{   //將前端資料匯入
+    $account = input('account');
+    $email = input('email');
+    $cellphone =input('cellphone');
+    $password = input('password');
+    $address = input('address');
+    $serialnumber = date("YmdHis");
+    if($account == ''){
+
+		$this['account1'] = false;
+
+    }else if($email == ''){
+
+		$this['account1'] = false;
+
+    }else if($password == ''){
+
+		$this['account1'] = false;
+
+    }else{
+        $this['account1'] = true;
+
+
+//新增一個新帳號
+    $user = Auth::register([
+    'name' => $account,
+    'email' => $email,
+    'password' => $password,
+    'password_confirmation' => $password,
+], true);
+
+Db::table('dps_shopping_information')->insert([
+['accountname' => $account,'cellphone' => $cellphone,'address' => $address,'serialnumber'=> $serialnumber]
+
+
+]);
+echo '完成';
+
+
+
+}
+
+}
+?>
+==
+<!--註冊新帳號網頁-->
+
+<div class="atuo">
+
+
+    <div class="banner"></div>
+    
+        <div class="tt">
+        <h1>三夜草新概念健康餐盒</h1>
+    </div>
+    
+    <div class="man">
+        <div class="online">
+        <form id="data_form" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">暱稱</span>
+                </div>
+                <input name="account" type="account" class="form-control">
+            </div>
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">電子郵件</span>
+                </div>
+                <input name="email" type="email" class="form-control">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">密碼</span>
+                </div>
+                <input name="password" type="password" class="form-control">
+            </div>
+           
+           
+           
+           
+           
+           
+           
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">連絡電話</span>
+                </div>
+                <input name="cellphone" type="cellphone" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">送貨地點：</span>
+                </div>
+                <select  name="address"  aria-label="Default select example" class="form-select">
+                    <option value="高雄市鳳山區11巷11弄11號(鳳山分店)">高雄市鳳山區11巷11弄11號(鳳山分店)</option>
+                    <option value="高雄市苓雅區22巷2弄22號(苓雅分店)">高雄市苓雅區22巷2弄22號(苓雅分店)</option>
+                    <option value="高雄市旗山區33巷33弄33號(旗山分店)">高雄市鳳山區33巷33弄33號(旗山分店)</option>
+                    <option value="台北市忠孝東路111號(忠孝東路分店)">台北市忠孝東路111號(忠孝東路分店</option>
+                    <option value="台中市逢甲區11巷11弄11號(逢甲分店)">台中市逢甲區11巷11弄11號(逢甲分店)</option>
+    
+                </select>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                註冊
+            </button>
+
+        </form>
+    
+    </div>
+    <div id="ajaxDiv"></div>
+        
+    </div>
+    
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+";s:5:"mtime";i:1641888970;s:6:"markup";s:2930:"<!--註冊新帳號網頁-->
+
+<div class="atuo">
+
+
+    <div class="banner"></div>
+    
+        <div class="tt">
+        <h1>三夜草新概念健康餐盒</h1>
+    </div>
+    
+    <div class="man">
+        <div class="online">
+        <form id="data_form" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">暱稱</span>
+                </div>
+                <input name="account" type="account" class="form-control">
+            </div>
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">電子郵件</span>
+                </div>
+                <input name="email" type="email" class="form-control">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">密碼</span>
+                </div>
+                <input name="password" type="password" class="form-control">
+            </div>
+           
+           
+           
+           
+           
+           
+           
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">連絡電話</span>
+                </div>
+                <input name="cellphone" type="cellphone" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">送貨地點：</span>
+                </div>
+                <select  name="address"  aria-label="Default select example" class="form-select">
+                    <option value="高雄市鳳山區11巷11弄11號(鳳山分店)">高雄市鳳山區11巷11弄11號(鳳山分店)</option>
+                    <option value="高雄市苓雅區22巷2弄22號(苓雅分店)">高雄市苓雅區22巷2弄22號(苓雅分店)</option>
+                    <option value="高雄市旗山區33巷33弄33號(旗山分店)">高雄市鳳山區33巷33弄33號(旗山分店)</option>
+                    <option value="台北市忠孝東路111號(忠孝東路分店)">台北市忠孝東路111號(忠孝東路分店</option>
+                    <option value="台中市逢甲區11巷11弄11號(逢甲分店)">台中市逢甲區11巷11弄11號(逢甲分店)</option>
+    
+                </select>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                註冊
+            </button>
+
+        </form>
+    
+    </div>
+    <div id="ajaxDiv"></div>
+        
+    </div>
+    
+    </div>";s:4:"code";s:904:"//註冊新帳號
+function onFormSubmit()
+{   //將前端資料匯入
+    $account = input('account');
+    $email = input('email');
+    $cellphone =input('cellphone');
+    $password = input('password');
+    $address = input('address');
+    $serialnumber = date("YmdHis");
+    if($account == ''){
+
+		$this['account1'] = false;
+
+    }else if($email == ''){
+
+		$this['account1'] = false;
+
+    }else if($password == ''){
+
+		$this['account1'] = false;
+
+    }else{
+        $this['account1'] = true;
+
+
+//新增一個新帳號
+    $user = Auth::register([
+    'name' => $account,
+    'email' => $email,
+    'password' => $password,
+    'password_confirmation' => $password,
+], true);
+
+Db::table('dps_shopping_information')->insert([
+['accountname' => $account,'cellphone' => $cellphone,'address' => $address,'serialnumber'=> $serialnumber]
+
+
+]);
+echo '完成';
+
+
+
+}
+
+}";s:5:"title";s:8:"register";s:3:"url";s:9:"/register";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

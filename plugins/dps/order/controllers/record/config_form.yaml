@@ -1,0 +1,10 @@
+name: Record
+form: $/dps/order/models/record/fields.yaml
+modelClass: Dps\Order\Models\Record
+defaultRedirect: dps/order/record
+create:
+    redirect: 'dps/order/record/update/:id'
+    redirectClose: dps/order/record
+update:
+    redirect: dps/order/record
+    redirectClose: dps/order/record

@@ -1,0 +1,21 @@
+fields:
+    username:
+        label: username
+        span: auto
+        type: text
+    commodityname:
+        label: commodityname
+        span: auto
+        type: text
+    number:
+        label: number
+        span: auto
+        type: text
+    money:
+        label: money
+        span: auto
+        type: text
+    nature:
+        label: nature
+        span: auto
+        type: text

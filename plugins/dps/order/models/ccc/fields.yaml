@@ -1,0 +1,9 @@
+fields:
+    id:
+        label: id
+        span: auto
+        type: text
+    chname:
+        label: chname
+        span: auto
+        type: text

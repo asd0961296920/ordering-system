@@ -1,0 +1,53 @@
+
+{% for pss in pss %}
+   
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="{{pss.orderid}}">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cc{{pss.orderid}}" aria-expanded="false" aria-controls="cc{{pss.orderid}}">
+      訂單編號： {{pss.orderid}} 用戶編號： {{pss.username}}  　訂貨日期：{{pss.date}}　出貨狀態：{{pss.shippingstatus}}
+    </button>
+  </h2>
+  <div id="cc{{pss.orderid}}" class="accordion-collapse collapse" aria-labelledby="{{pss.orderid}}" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">
+      <p>單點:</p>
+      {% for tt in tt %}
+           
+      {% if pss.orderid == tt.id %}
+
+      {% if tt.nature == '單點' %}
+
+<p>菜名:{{tt.chname}} 數量:{{tt.number}}</p>
+   
+{% endif %}
+{% endif %}
+{% endfor %} 
+
+
+<p>便當:</p>
+
+
+{% for tt in tt %}
+           
+{% if pss.orderid == tt.id %}
+
+{% if tt.nature == '便當' %}
+
+<p>菜名:{{tt.chname}} 數量:{{tt.number}}</p>
+
+{% endif %}
+
+
+
+{% endif %}
+{% endfor %} 
+      送達地址： {{pss.address}}
+   </div>
+</div>
+</div>
+
+
+{% endfor %} 
+
+
+

@@ -1,0 +1,4 @@
+title: Rabbiteass
+modelClass: Dps\Food\Models\Rabbeass
+toolbar:
+    buttons: reorder_toolbar

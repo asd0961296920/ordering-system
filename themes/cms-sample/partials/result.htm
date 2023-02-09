@@ -1,0 +1,12 @@
+<script>
+	{% if have_login %}
+		window.location.href = "/food/order";
+	{% else %}
+		Swal.fire({
+		  title: '輸入不正確',
+		  text: '帳號或密碼錯誤，請重新輸入!!',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% endif %}
+</script>

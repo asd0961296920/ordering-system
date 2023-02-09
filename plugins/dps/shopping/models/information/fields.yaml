@@ -1,0 +1,25 @@
+fields:
+    id:
+        label: id
+        span: auto
+        type: text
+    accountname:
+        label: accountname
+        span: auto
+        type: text
+    cellphone:
+        label: cellphone
+        span: auto
+        type: text
+    address:
+        label: address
+        span: auto
+        type: text
+    serialnumber:
+        label: serialnumber
+        span: auto
+        type: text
+    authority:
+        label: authority
+        span: auto
+        type: text

@@ -1,0 +1,10 @@
+name: Rabbit
+form: $/dps/food/models/rabbit/fields.yaml
+modelClass: Dps\Food\Models\Rabbit
+defaultRedirect: dps/food/rabbit
+create:
+    redirect: 'dps/food/rabbit/update/:id'
+    redirectClose: dps/food/rabbit
+update:
+    redirect: dps/food/rabbit
+    redirectClose: dps/food/rabbit

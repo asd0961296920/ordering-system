@@ -1,0 +1,178 @@
+title = "Home"
+url = "/customer"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onFormSubmit()
+{
+    $Text1 = $_POST["Text1"];
+
+//查詢輸入跟資料庫的資料有無相同
+    $apply = Db::table('dps_food_rabbiteass')
+    ->select('*')
+    ->where('problem', 'like', $Text1)
+    ->get();	
+
+    foreach ($apply as $apply) {
+        return $apply->reply;
+    }                        
+
+}
+function onStart()
+{
+
+    $user = Auth::getUser();
+
+    if($user){
+        $this['useres'] = Db::table('dps_shopping_information')->where('accountname', '=', $user->name)->value('authority');
+        }
+
+
+}
+?>
+==
+<!--客服機器人 用來回答客人一些簡單的問題-->
+
+
+<div class="atuo">
+
+
+    <div class="banner"></div>
+    
+        <div class="tt">
+        <h1>三夜草新概念健康餐盒</h1>
+    </div>
+    
+    <div class="man">
+    
+    
+
+
+        <style type="text/css">
+        .ppp{
+            width: 100%;
+            height: 700px;
+        }
+            .talk_con{
+                overflow: hidden;
+position: absolute;
+                width:600px;
+                height:500px;
+ 
+top: 25%;
+left: 25%;
+                margin:0px auto;
+                background:#f3f3f3;
+          border-radius:10px;
+            }
+            .talk_show{
+                width:580px;
+                height:420px;
+                margin:10px auto 0;
+                overflow:auto;
+            }
+            .talk_input{
+                width:580px;
+                margin:10px auto 0;
+            }
+            .whotalk{
+                width:80px;
+                height:30px;
+                float:left;
+                outline:none;
+            }
+            .talk_word{
+                width:510px;
+                height:26px;
+                padding:0px;
+                float:left;
+                outline:none;
+                text-indent:10px;
+            }        
+            .talk_sub{
+                width:56px;
+                height:30px;
+                float:left;
+                margin-left:10px;
+            }
+            .atalk{
+               margin:10px; 
+            }
+            .atalk span{
+                border-radius:10px;
+                color:#000;
+                padding:5px 10px;
+            }
+            .btalk{
+                margin:10px;
+                text-align:right;
+            }
+            .btalk span{
+                display:inline-block;
+                background:#3679ee;
+                border-radius:10px;
+                color:#fff;
+                padding:5px 10px;
+            }
+          .talk_img{
+            width:25px;height:25px; 
+border-radius:999em;
+padding: 5px 0;
+background-size:contain;
+
+          margin:0 7px;
+          background-image: url('http://qn.ivybaby.me/img/knowledge/small/20190527/20190527183606/d88d248d0ef24dcab3748c470e053e28.png');
+float: left;
+
+          }
+          #asay{background-color: #fff;}
+        </style>
+
+
+{% partial 'site/jstable' %}
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+          <div class="col">
+
+            <div class="ppp">
+
+                <div class="talk_con">
+                    <div class="talk_show" id="words">
+                        <div class="atalk"><div  class="talk_img"></div>
+                          <span id="asay">您好，這邊是客服機器人，要真人客服請打１，要故障回報請打２，要聊天請打３　其他功能還沒想好，有人能告訴我我還能做啥嗎？</span></div>
+        
+                    </div>
+                    <div class="talk_input">
+                        <input type="text" class="talk_word" id="talkwords" name="words">
+                        <input type="button" value="傳送" class="talk_sub" id="talksub">
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    
+    
+    
+        
+    </div>
+    
+    </div>
+    
+    

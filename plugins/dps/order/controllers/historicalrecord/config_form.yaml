@@ -1,0 +1,10 @@
+name: Historicalrecord
+form: $/dps/order/models/historicalrecord/fields.yaml
+modelClass: Dps\Order\Models\Historicalrecord
+defaultRedirect: dps/order/historicalrecord
+create:
+    redirect: 'dps/order/historicalrecord/update/:id'
+    redirectClose: dps/order/historicalrecord
+update:
+    redirect: dps/order/historicalrecord
+    redirectClose: dps/order/historicalrecord

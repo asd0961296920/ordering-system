@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: id
+        type: text
+    dishid:
+        label: dishid
+        type: text
+    number:
+        label: number
+        type: number
+    nature:
+        label: nature
+        type: text
+    ordernumber:
+        label: ordernumber
+        type: text
+    chname:
+        label: chname
+        type: text

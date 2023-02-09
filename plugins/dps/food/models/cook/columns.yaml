@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    imager:
+        label: imager
+        type: text
+    cc:
+        label: cc
+        type: number
+    money:
+        label: money
+        type: number
+    img:
+        label: img
+        type: text
+    type:
+        label: type
+        type: text

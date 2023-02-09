@@ -1,0 +1,73 @@
+<script type="text/javascript">      
+    // 客服機器人後端
+        window.onload = function(){
+            var Words = document.getElementById("words");
+            var Who = document.getElementById("who");
+            var TalkWords = document.getElementById("talkwords");
+            var TalkSub = document.getElementById("talksub");
+
+
+            TalkSub.onclick = function(){
+                //定義空字串
+                var str = "";
+                if(TalkWords.value == ""){
+                     // 訊息為空時彈窗
+                //    alert("訊息不能為空");
+                    return;
+                }
+
+                    //如果Who.value為0n那麼是 A說
+                    str = '<div class="btalk"><span>' + TalkWords.value +'</span></div>' ;  
+
+              //將之前的內容與要發的內容拼接好 提交
+                Words.innerHTML = Words.innerHTML + str;
+
+
+//js用ajax呼叫php
+ $().request('onFormSubmit', {
+    type: "POST",
+    data:{Text1:TalkWords.value},
+    success: function(cc) {
+    
+        setTimeout(function() { 
+
+
+if(cc==''){
+
+    str = '<div class="atalk"><div  class="talk_img"></div><span id="asay">' + '我聽不懂喔!' +'</span></div>';
+
+}else{
+    str = '<div class="atalk"><div  class="talk_img"></div><span id="asay">' +cc.result +'</span></div>';
+}
+
+
+            Words.innerHTML = Words.innerHTML + str;
+},1000); 
+
+    }
+})
+
+
+/*
+
+
+    
+if(TalkWords.value.search("你好")!= -1 ||TalkWords.value.search("您好")!= -1){
+str = '<div class="atalk"><div  class="talk_img"></div><span id="asay">' + '請問需要什麼幫助0.0?' +'</span></div>';
+
+}else{
+str = '<div class="atalk"><div  class="talk_img"></div><span id="asay">' + '我聽不懂喔!' +'</span></div>';
+
+}
+*/
+document.getElementById("talkwords").value="";
+
+
+            }
+
+        }
+
+
+    </script>
+
+

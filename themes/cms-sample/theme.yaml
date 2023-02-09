@@ -1,0 +1,9 @@
+name: CMS管理系統教學網站
+description: CMS管理系統教學網站
+author: 'Eosin Chen'
+homepage: ''
+code: youth-data-manage-system
+previewImage: assets/public/images/theme-preview.png
+form: config/f.yaml
+require: config/r.yaml
+translate: config/t.yaml

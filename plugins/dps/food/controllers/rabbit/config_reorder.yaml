@@ -1,0 +1,4 @@
+title: Rabbit
+modelClass: Dps\Food\Models\Rabbit
+toolbar:
+    buttons: reorder_toolbar

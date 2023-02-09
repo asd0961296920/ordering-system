@@ -1,0 +1,13 @@
+fields:
+    id:
+        label: id
+        span: auto
+        type: text
+    problem:
+        label: problem
+        span: auto
+        type: text
+    reply:
+        label: reply
+        span: auto
+        type: text

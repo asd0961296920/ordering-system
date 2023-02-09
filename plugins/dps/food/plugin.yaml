@@ -1,0 +1,20 @@
+plugin:
+    name: 'dps.food::lang.plugin.name'
+    description: 'dps.food::lang.plugin.description'
+    author: dps
+    icon: oc-icon-apple
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: cook
+        url: /dps/food/cook
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: food
+                url: /dps/food/cook
+                icon: icon-sitemap
+            side-menu-item2:
+                label: rabbit
+                url: dps/food/rabbiteass
+                icon: icon-sitemap

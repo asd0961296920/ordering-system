@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: id
+        type: number
+    username:
+        label: username
+        type: text
+    commodityname:
+        label: commodityname
+        type: text
+    number:
+        label: number
+        type: number
+    money:
+        label: money
+        type: number
+    nature:
+        label: nature
+        type: text

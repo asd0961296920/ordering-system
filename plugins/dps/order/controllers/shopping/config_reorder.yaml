@@ -1,0 +1,4 @@
+title: Shopping
+modelClass: Dps\Order\Models\Record
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,4 @@
+title: Cook
+modelClass: Dps\Food\Models\Cook
+toolbar:
+    buttons: reorder_toolbar

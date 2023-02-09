@@ -1,0 +1,338 @@
+1646726082a:1:{s:15:"site/header.htm";a:5:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:4278:"<!--網頁最上面的導航欄-->
+<div class="containe">
+
+      <div class="bcn">
+        <div class="tab">
+            <a id="tab01" style="font-weight:800; " href="#">三夜草</a>
+        </div>
+      </div>
+
+
+
+
+
+      <script type="text/javascript">
+        $(function(){
+      var c=0;
+          $(".m-title").click(function(){
+              $("#cc").slideToggle();
+    
+              if(c==0){
+                $(".m-title").css("background-image", "url('https://pic.pimg.tw/weilife/1622533546-1227418643-g.png')");
+
+                    c=c+1;  
+          }else{
+            $(".m-title").css("background-image", "url('https://pic.pimg.tw/weilife/1622460424-397400884-g.png')");
+
+                   c=0; 
+          }
+
+            });
+      
+        });
+          
+        </script>
+
+
+
+
+
+
+      <div class="m-title">  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="header" id="cc">
+          {% if user %}
+          <a id="tab08" data-request="onLogout" data-request-data="redirect: '/on'">登出</a>
+        {% endif %}
+
+
+
+
+
+
+{% if useres == "管理員" %}
+          <a id="tab99" href="#">後臺管理</a>
+          {% endif %}
+          {% if not user %}
+          <a id="tab07" href="#">登入/註冊</a>
+        {% endif %}
+
+
+
+
+
+
+
+          <a id="tab00" href="#">購物車</a>
+          <a id="tab66" href="#">會員中心</a>
+          <a id="tab05" href="#">客服機器人</a>
+          <!-- <a id="tab04" href="#">PORTFOLIO</a>-->
+          <a id="tab04" href="#">關於我們</a>
+     <a id="tab09" href="#">幫您選擇</a>
+          <a id="tab02" href="#">點餐菜單</a>
+          <a id="tab03" href="#" >首頁</a>   
+
+
+          <script type="text/javascript">
+          var time=500;
+            $(function() {
+                $('.atuo').fadeIn();
+                $("#tab00").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/on' ",time);
+                });
+
+                $("#tab01").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/' ",time);
+                });
+
+                $("#tab02").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/cartemenu' ",time);
+                });
+
+                $("#tab03").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/' ",time);
+                });
+                
+                $("#tab04").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/introduce' ",time);
+                });
+
+                $("#tab05").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/customer' ",time);
+                });
+                $("#tab07").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/on' ",time);
+                });
+
+                $("#tab66").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/mem' ",time);
+                });
+
+
+                $("#tab09").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/wisdom' ",time);
+                });
+
+
+                $("#tab99").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/backstage' ",time);
+                });
+              })
+              
+        
+
+            </script>
+
+
+
+
+          
+
+
+          </div>
+
+
+  </div>
+";s:5:"mtime";i:1643249917;s:6:"markup";s:4276:"<!--網頁最上面的導航欄-->
+<div class="containe">
+
+      <div class="bcn">
+        <div class="tab">
+            <a id="tab01" style="font-weight:800; " href="#">三夜草</a>
+        </div>
+      </div>
+
+
+
+
+
+      <script type="text/javascript">
+        $(function(){
+      var c=0;
+          $(".m-title").click(function(){
+              $("#cc").slideToggle();
+    
+              if(c==0){
+                $(".m-title").css("background-image", "url('https://pic.pimg.tw/weilife/1622533546-1227418643-g.png')");
+
+                    c=c+1;  
+          }else{
+            $(".m-title").css("background-image", "url('https://pic.pimg.tw/weilife/1622460424-397400884-g.png')");
+
+                   c=0; 
+          }
+
+            });
+      
+        });
+          
+        </script>
+
+
+
+
+
+
+      <div class="m-title">  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="header" id="cc">
+          {% if user %}
+          <a id="tab08" data-request="onLogout" data-request-data="redirect: '/on'">登出</a>
+        {% endif %}
+
+
+
+
+
+
+{% if useres == "管理員" %}
+          <a id="tab99" href="#">後臺管理</a>
+          {% endif %}
+          {% if not user %}
+          <a id="tab07" href="#">登入/註冊</a>
+        {% endif %}
+
+
+
+
+
+
+
+          <a id="tab00" href="#">購物車</a>
+          <a id="tab66" href="#">會員中心</a>
+          <a id="tab05" href="#">客服機器人</a>
+          <!-- <a id="tab04" href="#">PORTFOLIO</a>-->
+          <a id="tab04" href="#">關於我們</a>
+     <a id="tab09" href="#">幫您選擇</a>
+          <a id="tab02" href="#">點餐菜單</a>
+          <a id="tab03" href="#" >首頁</a>   
+
+
+          <script type="text/javascript">
+          var time=500;
+            $(function() {
+                $('.atuo').fadeIn();
+                $("#tab00").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/on' ",time);
+                });
+
+                $("#tab01").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/' ",time);
+                });
+
+                $("#tab02").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/cartemenu' ",time);
+                });
+
+                $("#tab03").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/' ",time);
+                });
+                
+                $("#tab04").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/introduce' ",time);
+                });
+
+                $("#tab05").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/customer' ",time);
+                });
+                $("#tab07").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/on' ",time);
+                });
+
+                $("#tab66").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/mem' ",time);
+                });
+
+
+                $("#tab09").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/wisdom' ",time);
+                });
+
+
+                $("#tab99").click(function(){
+                  $('.atuo').fadeOut();
+                  $('.fooder').fadeOut();
+                  setTimeout("top.location.href = '/food/backstage' ",time);
+                });
+              })
+              
+        
+
+            </script>
+
+
+
+
+          
+
+
+          </div>
+
+
+  </div>";s:4:"code";N;}}

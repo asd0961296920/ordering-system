@@ -1,0 +1,12 @@
+list: $/dps/food/models/rabbit/columns.yaml
+modelClass: Dps\Food\Models\Rabbit
+title: Rabbit
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dps/food/rabbit/update/:id'

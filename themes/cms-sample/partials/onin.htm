@@ -1,0 +1,48 @@
+<script>
+	{% if have_login %}
+		window.location.href = "/food/order";
+	{% else %}
+		Swal.fire({
+		  title: '您未登入',
+		  text: '請先到會員中心登入，再下訂單',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% endif %}
+</script>
+
+<script>
+	{% if not account1 %}
+		Swal.fire({
+		  title: '未填寫暱稱，電子郵箱或密碼',
+		  text: '所有欄位皆不得為空，請確認是否有確實填寫',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% endif %}
+</script>
+
+
+<script>
+	{% if fc %}
+		Swal.fire({
+		  title: '商品已加入購物車',
+		  text: '',
+		  icon: 'success',
+		  confirmButtonText: '完成'
+		});
+	{% endif %}
+</script>
+
+<script>
+	{% if fcc %}
+		Swal.fire({
+		  title: '商品已從購物車移除',
+		  text: '',
+		  icon: 'success',
+		  confirmButtonText: '關閉'
+		});
+	{% endif %}
+</script>
+
+

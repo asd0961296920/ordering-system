@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: id
+        type: number
+    accountname:
+        label: accountname
+        type: text
+    cellphone:
+        label: cellphone
+        type: text
+    address:
+        label: address
+        type: text
+    serialnumber:
+        label: serialnumber
+        type: text
+    old:
+        label: old
+        type: text
+    blood:
+        label: blood
+        type: text
+    authority:
+        label: authority
+        type: text

@@ -1,0 +1,20 @@
+plugin:
+    name: 'dps.order::lang.plugin.name'
+    description: 'dps.order::lang.plugin.description'
+    author: dps
+    icon: oc-icon-bar-chart
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: record
+        url: dps/order/record
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: record
+                url: dps/order/record
+                icon: icon-sitemap
+            side-menu-item2:
+                label: historicalrecord
+                url: dps/order/historicalrecord
+                icon: icon-sitemap

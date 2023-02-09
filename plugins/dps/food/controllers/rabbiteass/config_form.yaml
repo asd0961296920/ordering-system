@@ -1,0 +1,10 @@
+name: Rabbiteass
+form: $/dps/food/models/rabbeass/fields.yaml
+modelClass: Dps\Food\Models\Rabbeass
+defaultRedirect: dps/food/rabbiteass
+create:
+    redirect: 'dps/food/rabbiteass/update/:id'
+    redirectClose: dps/food/rabbiteass
+update:
+    redirect: dps/food/rabbiteass
+    redirectClose: dps/food/rabbiteass

@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    username:
+        label: username
+        type: text
+    address:
+        label: address
+        type: text
+    date:
+        label: date
+        type: text

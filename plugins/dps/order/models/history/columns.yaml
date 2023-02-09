@@ -1,0 +1,19 @@
+columns:
+    username:
+        label: username
+        type: text
+    cookname:
+        label: cookname
+        type: text
+    number:
+        label: number
+        type: number
+    money:
+        label: money
+        type: number
+    address:
+        label: address
+        type: text
+    date:
+        label: date
+        type: text

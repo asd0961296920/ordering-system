@@ -1,0 +1,77 @@
+title = "Home"
+url = "/backstageon"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+
+
+    $user = Auth::getUser();
+
+    if($user){
+        $this['useres'] = Db::table('dps_shopping_information')->where('accountname', '=', $user->name)->value('authority');
+        }
+    
+    
+                              
+
+}
+?>
+==
+{% if user %}
+	<script>
+		window.location.href = "/food/backstage";
+	</script>
+{% endif %}
+
+<div class="bon">
+<form id="data_form" data-request="onFormSubmit" data-request-update="result: '#ajaxDiv'">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">帳號</span>
+        </div>
+        <input name="account" type="text" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">密碼</span>
+        </div>
+        <input name="password" type="password" class="form-control">
+    </div>
+    
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                登入
+            </button>
+            
+        </div>
+    </div>
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

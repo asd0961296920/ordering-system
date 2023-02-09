@@ -1,0 +1,12 @@
+list: $/dps/food/models/rabbeass/columns.yaml
+modelClass: Dps\Food\Models\Rabbeass
+title: Rabbiteass
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dps/food/rabbiteass/update/:id'

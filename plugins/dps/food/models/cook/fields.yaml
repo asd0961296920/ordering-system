@@ -1,0 +1,30 @@
+fields:
+    id:
+        label: id
+        span: auto
+        type: text
+    name:
+        label: name
+        span: auto
+        type: text
+    imager:
+        label: imager
+        span: auto
+        type: text
+    cc:
+        label: cc
+        span: auto
+        type: text
+    money:
+        label: money
+        span: auto
+        type: text
+    img:
+        label: img
+        mode: file
+        span: auto
+        type: mediafinder
+    type:
+        label: type
+        span: auto
+        type: text
