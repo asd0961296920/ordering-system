@@ -6,7 +6,7 @@
 
 themes/cms-sample裡面是主要編寫的檔案部分
 
-已上線的網站連結:http://worker.byethost12.com/food/
+已上線的網站連結:https://clovershopping.epizy.com/food/
 
 
 # October CMS的安裝嚮導
