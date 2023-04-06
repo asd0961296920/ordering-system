@@ -37,4 +37,4 @@ October CMS 有一些系統要求：
 
 某些操作系統發行版可能需要您手動安裝一些必需的 PHP 擴展。
 
-##使用xampp-windows-x64-7.4.21-0-VC15 版本
+## 使用xampp-windows-x64-7.4.21-0-VC15 版本
