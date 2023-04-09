@@ -1,0 +1,798 @@
+1681026573a:1:{s:13:"site/shop.htm";a:6:{s:8:"fileName";s:13:"site/shop.htm";s:7:"content";s:6956:"==
+<?php
+
+//列出購物車裡面有什麼
+function onStart()
+{
+    $user = Auth::getUser();
+    $accly = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('accountname', '=', $user->name)
+    ->get();
+    $this['user'] = Db::table('dps_shopping_information')->where('accountname', '=', $user->name)->value('authority');
+    $this['cn'] = '';
+
+
+    foreach ($accly as $accly) {
+
+//查詢購物車
+        //單點查詢
+
+    $this['posts'] = Db::table('dps_shopping_commodity')
+    ->select('*')
+    ->where('username', '=', $accly ->serialnumber)
+    ->where('nature', '=', '單點')
+    ->get();
+        //便當查詢
+        $this['ptt'] = Db::table('dps_shopping_commodity')
+        ->select('*')
+        ->where('username', '=', $accly ->serialnumber)
+        ->where('nature', '=', '便當')
+        ->get();
+       
+        $this['wer'] = Db::table('dps_shopping_commodity')
+        ->select('bentonumber')
+        ->distinct()
+        ->where('username', '=', $accly ->serialnumber)
+        ->get();
+
+
+
+$cd = $accly ->serialnumber;
+
+
+
+
+     $ffdd = Db::table('dps_shopping_commodity')
+     ->select('*')
+     ->where('username', '=', $accly ->serialnumber)
+     ->get();
+     $eee = Db::table('dps_shopping_commodity')
+     ->select('*')
+     ->where('username', '=', $accly ->serialnumber)
+     ->where('bentonumber', '<>', '')
+     ->get();
+
+    //查詢地址
+    $this['cc'] = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('serialnumber', '=', $accly ->serialnumber)
+    ->get();	
+ 
+
+}
+
+$ww = 0;
+
+// 價格統計
+foreach ($ffdd as $ffdd) {
+$ww = $ww +  $ffdd->money;
+
+}
+$ddd = '';
+$dddd= 0;
+foreach ($eee as $eee) {
+if($dddd == 0){
+    $ww = $ww +  60;
+    $dddd= 1;
+    $ddd2 = $eee->bentonumber;
+
+}else{
+
+if($ddd != $eee->bentonumber && $ddd !=$ddd2){
+    $ww = $ww +  60;
+
+
+}
+}
+$ddd = $eee->bentonumber;
+
+
+
+
+    
+    }
+
+
+
+$this['ff'] = $ww; 
+
+
+
+
+
+//健康食物
+
+$wq = Db::table('dps_shopping_information')
+->select('*')
+->where('serialnumber', '=', $cd)
+->get();
+
+
+foreach ($wq as $wq) {
+
+$gorb = $wq->gender;
+
+
+}
+$oot = 0;
+$ffcs = Db::table('dps_shopping_commodity')
+->select('*')
+->where('username', '=', $cd)
+->get();
+foreach ($ffcs as $ffcs) {
+
+
+    $oo = Db::table('dps_food_cook')->where('id', '=', $ffcs->commodityname)->value('cc');
+
+$oot +=$oo;
+
+    
+    }
+
+
+
+if($gorb == ''){
+
+    $this['vv'] = '正常健康'; 
+
+
+
+
+}else if($oot >= 200 && $gorb == '女'){
+    $this['vv'] = '熱量過高'; 
+
+
+
+
+
+}else if($oot < 200 && $gorb == '女'){
+    $this['vv'] = '熱量適中'; 
+
+
+
+
+
+}else if($oot >= 500 && $gorb == '男'){
+    $this['vv'] = '熱量過高'; 
+
+
+
+
+
+}else if($oot < 500 && $gorb == '男'){
+    $this['vv'] = '熱量適中'; 
+
+
+
+
+
+}else if($oot >= 1000 && $gorb == '雙性人'){
+    $this['vv'] = '熱量過高'; 
+
+
+
+
+
+}else if($oot < 1000 && $gorb == '雙性人'){
+    $this['vv'] = '熱量適中'; 
+
+
+
+
+
+}
+
+
+
+
+
+
+}
+
+
+?>
+
+==
+<div class="shopping">
+<!--列出購物車中有甚麼東西-->
+
+<script>
+    $(document).ready(function(){
+  $("#rr").click(function(){
+    $('#data_form2').request('onFormSubmit', {
+        success: function() {
+            
+Swal.fire({
+                title: "訂單已成立",
+                text: "出貨時請到您選擇的地點領取，付款請在取貨時現付，可以在訂單紀錄中查詢訂單狀態，要更改每次出貨地點請到個人資料修改",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
+
+				location.reload();
+
+
+            });
+
+
+        }
+    })
+
+});
+});
+
+$(document).ready(function(){
+  $("#tw").click(function(){
+    $.request('onFor', {
+        success: function() {
+
+		Swal.fire({
+                title: "購物車已清除",
+                text: "",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
+
+				location.reload();
+
+
+            });
+
+
+
+
+
+
+        }
+    })
+
+});
+});
+
+
+
+
+
+    </script>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-8">
+            
+<div class="foodtab">
+
+
+        <form id="data_form2" data-request="onFormSubmit">
+
+
+
+
+
+
+
+        <div class="hedd"><h4>我的購物車</h4></div>
+        {% if posts == "[]" %}
+
+        <p>暫無資料</p>
+{% endif %}
+
+
+        {% for post in posts %}
+
+      <div class="connern">
+            <div class="row">
+                <input  type="hidden" name="moneyname" value="{{post.cookname}}">
+                <div class="col">
+                    <img src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.cookname}}.jpg"alt="" style="width: 70px;height: 70px;">
+                </div>
+                <div class="col">
+                  <p>  {{post.cookname}}</p>
+                </div>
+                <div class="col">
+                    <p>  {{post.number}}份</p>
+                  </div>
+                  <div class="col">
+                    <p>  ${{post.money}}元</p>
+                  </div>
+              </div>
+            </div>
+
+
+        {% endfor %} 
+
+
+
+
+
+
+        {% for wer in wer %}
+            {% if wer.bentonumber != 0 %}
+
+
+
+<div class="connern">
+    <div class="row">
+        <div class="col">
+            <img src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/便當.jpg"alt="" style="width: 70px;height: 70px;">
+
+            </div>
+
+
+
+
+
+<div class="col">
+    {% for ptt in ptt %}
+    {% if wer.bentonumber == ptt.bentonumber %}
+
+<input  type="hidden" name="moneyname" value="{{ptt.name}}">
+
+<p>  {{ptt.cookname}}</p>
+
+
+{% endif %}
+{% endfor %} 
+</div>
+<div class="col">
+    {% for ptt in ptt %}
+    {% if wer.bentonumber == ptt.bentonumber %}
+
+<p>  {{ptt.number}}份</p>
+
+{% endif %}
+{% endfor %} 
+</div>
+<div class="col">
+
+<p>  $60元</p>
+
+
+</div>
+
+
+            </div>
+        </div>
+
+
+            {% endif %} 
+        {% endfor %} 
+
+        {% for post in cc %}
+        <input  type="hidden" name="address" value="{{post.address}}">
+        <input  type="hidden" name="moneyff" value="{{ff}}">
+        {% endfor %} 
+
+</form>
+
+
+
+</div>
+
+
+</div>
+<div class="col-sm-4">
+
+    <div class="hedd"><h4>購物總金額</h4></div>
+
+
+
+    <p>總金額：{{ff}}元</p>
+    {% for post in cc %}
+    <p>地址:{{post.address}}</p>
+    {% endfor %} 
+    <div class="hedd"></div>
+    <p> 所選菜單:{{vv}} </p>
+    <p> 糖量正常 </p>
+    <p> 澱粉量正常 </p>
+    <button type="submit" id="rr" class="btn btn-outline-primary px-5" >結帳</button>
+
+    <button type="submit" id="tw" class="btn btn-outline-primary px-5">取消購物
+
+
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+</div>";s:5:"mtime";i:1681025969;s:6:"markup";s:3861:"<div class="shopping">
+<!--列出購物車中有甚麼東西-->
+
+<script>
+    $(document).ready(function(){
+  $("#rr").click(function(){
+    $('#data_form2').request('onFormSubmit', {
+        success: function() {
+            
+Swal.fire({
+                title: "訂單已成立",
+                text: "出貨時請到您選擇的地點領取，付款請在取貨時現付，可以在訂單紀錄中查詢訂單狀態，要更改每次出貨地點請到個人資料修改",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
+
+				location.reload();
+
+
+            });
+
+
+        }
+    })
+
+});
+});
+
+$(document).ready(function(){
+  $("#tw").click(function(){
+    $.request('onFor', {
+        success: function() {
+
+		Swal.fire({
+                title: "購物車已清除",
+                text: "",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
+
+				location.reload();
+
+
+            });
+
+
+
+
+
+
+        }
+    })
+
+});
+});
+
+
+
+
+
+    </script>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-8">
+            
+<div class="foodtab">
+
+
+        <form id="data_form2" data-request="onFormSubmit">
+
+
+
+
+
+
+
+        <div class="hedd"><h4>我的購物車</h4></div>
+        {% if posts == "[]" %}
+
+        <p>暫無資料</p>
+{% endif %}
+
+
+        {% for post in posts %}
+
+      <div class="connern">
+            <div class="row">
+                <input  type="hidden" name="moneyname" value="{{post.cookname}}">
+                <div class="col">
+                    <img src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.cookname}}.jpg"alt="" style="width: 70px;height: 70px;">
+                </div>
+                <div class="col">
+                  <p>  {{post.cookname}}</p>
+                </div>
+                <div class="col">
+                    <p>  {{post.number}}份</p>
+                  </div>
+                  <div class="col">
+                    <p>  ${{post.money}}元</p>
+                  </div>
+              </div>
+            </div>
+
+
+        {% endfor %} 
+
+
+
+
+
+
+        {% for wer in wer %}
+            {% if wer.bentonumber != 0 %}
+
+
+
+<div class="connern">
+    <div class="row">
+        <div class="col">
+            <img src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/便當.jpg"alt="" style="width: 70px;height: 70px;">
+
+            </div>
+
+
+
+
+
+<div class="col">
+    {% for ptt in ptt %}
+    {% if wer.bentonumber == ptt.bentonumber %}
+
+<input  type="hidden" name="moneyname" value="{{ptt.name}}">
+
+<p>  {{ptt.cookname}}</p>
+
+
+{% endif %}
+{% endfor %} 
+</div>
+<div class="col">
+    {% for ptt in ptt %}
+    {% if wer.bentonumber == ptt.bentonumber %}
+
+<p>  {{ptt.number}}份</p>
+
+{% endif %}
+{% endfor %} 
+</div>
+<div class="col">
+
+<p>  $60元</p>
+
+
+</div>
+
+
+            </div>
+        </div>
+
+
+            {% endif %} 
+        {% endfor %} 
+
+        {% for post in cc %}
+        <input  type="hidden" name="address" value="{{post.address}}">
+        <input  type="hidden" name="moneyff" value="{{ff}}">
+        {% endfor %} 
+
+</form>
+
+
+
+</div>
+
+
+</div>
+<div class="col-sm-4">
+
+    <div class="hedd"><h4>購物總金額</h4></div>
+
+
+
+    <p>總金額：{{ff}}元</p>
+    {% for post in cc %}
+    <p>地址:{{post.address}}</p>
+    {% endfor %} 
+    <div class="hedd"></div>
+    <p> 所選菜單:{{vv}} </p>
+    <p> 糖量正常 </p>
+    <p> 澱粉量正常 </p>
+    <button type="submit" id="rr" class="btn btn-outline-primary px-5" >結帳</button>
+
+    <button type="submit" id="tw" class="btn btn-outline-primary px-5">取消購物
+
+
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+</div>";s:4:"code";s:3066:"//列出購物車裡面有什麼
+function onStart()
+{
+    $user = Auth::getUser();
+    $accly = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('accountname', '=', $user->name)
+    ->get();
+    $this['user'] = Db::table('dps_shopping_information')->where('accountname', '=', $user->name)->value('authority');
+    $this['cn'] = '';
+
+
+    foreach ($accly as $accly) {
+
+//查詢購物車
+        //單點查詢
+
+    $this['posts'] = Db::table('dps_shopping_commodity')
+    ->select('*')
+    ->where('username', '=', $accly ->serialnumber)
+    ->where('nature', '=', '單點')
+    ->get();
+        //便當查詢
+        $this['ptt'] = Db::table('dps_shopping_commodity')
+        ->select('*')
+        ->where('username', '=', $accly ->serialnumber)
+        ->where('nature', '=', '便當')
+        ->get();
+       
+        $this['wer'] = Db::table('dps_shopping_commodity')
+        ->select('bentonumber')
+        ->distinct()
+        ->where('username', '=', $accly ->serialnumber)
+        ->get();
+
+
+
+$cd = $accly ->serialnumber;
+
+
+
+
+     $ffdd = Db::table('dps_shopping_commodity')
+     ->select('*')
+     ->where('username', '=', $accly ->serialnumber)
+     ->get();
+     $eee = Db::table('dps_shopping_commodity')
+     ->select('*')
+     ->where('username', '=', $accly ->serialnumber)
+     ->where('bentonumber', '<>', '')
+     ->get();
+
+    //查詢地址
+    $this['cc'] = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('serialnumber', '=', $accly ->serialnumber)
+    ->get();	
+ 
+
+}
+
+$ww = 0;
+
+// 價格統計
+foreach ($ffdd as $ffdd) {
+$ww = $ww +  $ffdd->money;
+
+}
+$ddd = '';
+$dddd= 0;
+foreach ($eee as $eee) {
+if($dddd == 0){
+    $ww = $ww +  60;
+    $dddd= 1;
+    $ddd2 = $eee->bentonumber;
+
+}else{
+
+if($ddd != $eee->bentonumber && $ddd !=$ddd2){
+    $ww = $ww +  60;
+
+
+}
+}
+$ddd = $eee->bentonumber;
+
+
+
+
+    
+    }
+
+
+
+$this['ff'] = $ww; 
+
+
+
+
+
+//健康食物
+
+$wq = Db::table('dps_shopping_information')
+->select('*')
+->where('serialnumber', '=', $cd)
+->get();
+
+
+foreach ($wq as $wq) {
+
+$gorb = $wq->gender;
+
+
+}
+$oot = 0;
+$ffcs = Db::table('dps_shopping_commodity')
+->select('*')
+->where('username', '=', $cd)
+->get();
+foreach ($ffcs as $ffcs) {
+
+
+    $oo = Db::table('dps_food_cook')->where('id', '=', $ffcs->commodityname)->value('cc');
+
+$oot +=$oo;
+
+    
+    }
+
+
+
+if($gorb == ''){
+
+    $this['vv'] = '正常健康'; 
+
+
+
+
+}else if($oot >= 200 && $gorb == '女'){
+    $this['vv'] = '熱量過高'; 
+
+
+
+
+
+}else if($oot < 200 && $gorb == '女'){
+    $this['vv'] = '熱量適中'; 
+
+
+
+
+
+}else if($oot >= 500 && $gorb == '男'){
+    $this['vv'] = '熱量過高'; 
+
+
+
+
+
+}else if($oot < 500 && $gorb == '男'){
+    $this['vv'] = '熱量適中'; 
+
+
+
+
+
+}else if($oot >= 1000 && $gorb == '雙性人'){
+    $this['vv'] = '熱量過高'; 
+
+
+
+
+
+}else if($oot < 1000 && $gorb == '雙性人'){
+    $this['vv'] = '熱量適中'; 
+
+
+
+
+
+}
+
+
+
+
+
+
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}

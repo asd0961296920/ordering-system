@@ -1,0 +1,156 @@
+1681026240a:1:{s:11:"default.htm";a:7:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:3128:"description = "Default layout"
+[session]
+security = "all"
+==
+<?php
+function onStart()
+{
+    
+}
+?>
+==
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <link rel="icon" href="{{ 'assets/public/images/favicon.ico'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/public/css/app.css'|theme }}">
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <link href="{{ 'assets/css/plubic.css' |theme}}" rel="stylesheet">
+        <link href="{{ 'https://fonts.googleapis.com/earlyaccess/cwtexyen.css' |theme}}" rel="stylesheet">
+	
+        <!-- Bootstrap 4 -->
+		<link rel="stylesheet" href="{{ 'assets/bootstrap-4.4.1/css/bootstrap.min.css'|theme }}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+        {% styles %}
+        {% put styles %}
+        <link href="assets/css/plubic.css" rel="stylesheet" />    
+        <link href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css" rel="stylesheet" />   
+
+
+    {% endput %}
+    <link rel="stylesheet" href="{{ 'assets/css/layout.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/framework.css'|theme }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+		<!-- jQuery & SweetAalert -->
+        <script type="text/javascript" src="{{ 'assets/public/js/jquery-3.4.1.min.js'|theme }}"></script>
+        <script type="text/javascript" src="{{ 'assets/public/js/sweetalert2.all.min.js'|theme }}"></script>
+
+        <!-- 台灣三層式地址 TWZipCode -->
+        <script type="text/javascript" src="{{ 'assets/public/js/jquery.twzipcode.min.js'|theme }}"></script>
+
+    </head>
+<body>
+
+    <header id="app-header" class="app-header">
+        {% partial 'site/header' %}
+    </header>
+
+
+
+    <main id="app-content" class="app-content" role="main">
+        {% partial 'site/content' %}
+    </main>
+
+    <footer id="app-footer" class="app-footer">
+        {% partial 'site/footer' %}
+    </footer>
+    
+</div>
+
+<script type="text/javascript" src="{{ 'assets/public/js/manifest.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/public/js/vendor.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/public/js/app.js'|theme }}"></script>
+
+
+{% scripts %}
+
+{% framework %}
+{% framework extras %}
+{% scripts %}
+
+
+</body>
+</html>
+";s:5:"mtime";i:1641975476;s:6:"markup";s:3014:"<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <link rel="icon" href="{{ 'assets/public/images/favicon.ico'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/public/css/app.css'|theme }}">
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <link href="{{ 'assets/css/plubic.css' |theme}}" rel="stylesheet">
+        <link href="{{ 'https://fonts.googleapis.com/earlyaccess/cwtexyen.css' |theme}}" rel="stylesheet">
+	
+        <!-- Bootstrap 4 -->
+		<link rel="stylesheet" href="{{ 'assets/bootstrap-4.4.1/css/bootstrap.min.css'|theme }}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+        {% styles %}
+        {% put styles %}
+        <link href="assets/css/plubic.css" rel="stylesheet" />    
+        <link href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css" rel="stylesheet" />   
+
+
+    {% endput %}
+    <link rel="stylesheet" href="{{ 'assets/css/layout.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/framework.css'|theme }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+		<!-- jQuery & SweetAalert -->
+        <script type="text/javascript" src="{{ 'assets/public/js/jquery-3.4.1.min.js'|theme }}"></script>
+        <script type="text/javascript" src="{{ 'assets/public/js/sweetalert2.all.min.js'|theme }}"></script>
+
+        <!-- 台灣三層式地址 TWZipCode -->
+        <script type="text/javascript" src="{{ 'assets/public/js/jquery.twzipcode.min.js'|theme }}"></script>
+
+    </head>
+<body>
+
+    <header id="app-header" class="app-header">
+        {% partial 'site/header' %}
+    </header>
+
+
+
+    <main id="app-content" class="app-content" role="main">
+        {% partial 'site/content' %}
+    </main>
+
+    <footer id="app-footer" class="app-footer">
+        {% partial 'site/footer' %}
+    </footer>
+    
+</div>
+
+<script type="text/javascript" src="{{ 'assets/public/js/manifest.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/public/js/vendor.js'|theme }}"></script>
+<script type="text/javascript" src="{{ 'assets/public/js/app.js'|theme }}"></script>
+
+
+{% scripts %}
+
+{% framework %}
+{% framework extras %}
+{% scripts %}
+
+
+</body>
+</html>";s:4:"code";s:30:"function onStart()
+{
+    
+}";s:11:"description";s:14:"Default layout";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

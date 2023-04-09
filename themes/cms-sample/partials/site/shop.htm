@@ -202,13 +202,19 @@ if($gorb == ''){
   $("#rr").click(function(){
     $('#data_form2').request('onFormSubmit', {
         success: function() {
+            
+Swal.fire({
+                title: "訂單已成立",
+                text: "出貨時請到您選擇的地點領取，付款請在取貨時現付，可以在訂單紀錄中查詢訂單狀態，要更改每次出貨地點請到個人資料修改",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
 
-            Swal.fire({
-		  title: '訂單已成立',
-		  text: '出貨時請到您選擇的地點領取，付款請在取貨時現付，可以在訂單紀錄中查詢訂單狀態，要更改每次出貨地點請到個人資料修改',
-		  icon: 'success',
-		  confirmButtonText: '完成'
-		});
+				location.reload();
+
+
+            });
+
 
         }
     })
@@ -221,12 +227,22 @@ $(document).ready(function(){
     $.request('onFor', {
         success: function() {
 
-            Swal.fire({
-		  title: '購物車已清除',
-		  text: '',
-		  icon: 'success',
-		  confirmButtonText: '完成'
-		});
+		Swal.fire({
+                title: "購物車已清除",
+                text: "",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
+
+				location.reload();
+
+
+            });
+
+
+
+
+
 
         }
     })
@@ -269,7 +285,7 @@ $(document).ready(function(){
             <div class="row">
                 <input  type="hidden" name="moneyname" value="{{post.cookname}}">
                 <div class="col">
-                    <img src="http://localhost/food/themes/cms-sample/assets/img/{{post.cookname}}.jpg"alt="" style="width: 70px;height: 70px;">
+                    <img src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.cookname}}.jpg"alt="" style="width: 70px;height: 70px;">
                 </div>
                 <div class="col">
                   <p>  {{post.cookname}}</p>
@@ -299,7 +315,7 @@ $(document).ready(function(){
 <div class="connern">
     <div class="row">
         <div class="col">
-            <img src="http://localhost/food/themes/cms-sample/assets/img/便當.jpg"alt="" style="width: 70px;height: 70px;">
+            <img src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/便當.jpg"alt="" style="width: 70px;height: 70px;">
 
             </div>
 

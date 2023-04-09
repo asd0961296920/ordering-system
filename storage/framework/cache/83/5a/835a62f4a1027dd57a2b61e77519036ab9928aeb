@@ -1,0 +1,125 @@
+1681026240a:1:{s:15:"Backstageon.htm";a:9:{s:8:"fileName";s:15:"Backstageon.htm";s:7:"content";s:1371:"title = "Home"
+url = "/backstageon"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+
+
+    $user = Auth::getUser();
+
+    if($user){
+        $this['useres'] = Db::table('dps_shopping_information')->where('accountname', '=', $user->name)->value('authority');
+        }
+    
+    
+                              
+
+}
+?>
+==
+{% if user %}
+	<script>
+		window.location.href = "/food/backstage";
+	</script>
+{% endif %}
+
+<div class="bon">
+<form id="data_form" data-request="onFormSubmit" data-request-update="result: '#ajaxDiv'">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">帳號</span>
+        </div>
+        <input name="account" type="text" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">密碼</span>
+        </div>
+        <input name="password" type="password" class="form-control">
+    </div>
+    
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                登入
+            </button>
+            
+        </div>
+    </div>
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+";s:5:"mtime";i:1641973941;s:6:"markup";s:976:"{% if user %}
+	<script>
+		window.location.href = "/food/backstage";
+	</script>
+{% endif %}
+
+<div class="bon">
+<form id="data_form" data-request="onFormSubmit" data-request-update="result: '#ajaxDiv'">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">帳號</span>
+        </div>
+        <input name="account" type="text" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">密碼</span>
+        </div>
+        <input name="password" type="password" class="form-control">
+    </div>
+    
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-outline-primary my-5 px-5" style="border-radius:38px">
+                登入
+            </button>
+            
+        </div>
+    </div>
+
+</form>
+
+
+</div>";s:4:"code";s:259:"function onStart()
+{
+
+
+    $user = Auth::getUser();
+
+    if($user){
+        $this['useres'] = Db::table('dps_shopping_information')->where('accountname', '=', $user->name)->value('authority');
+        }
+    
+    
+                              
+
+}";s:5:"title";s:4:"Home";s:3:"url";s:12:"/backstageon";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

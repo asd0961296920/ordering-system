@@ -1,0 +1,118 @@
+1681022383a:1:{s:8:"onin.htm";a:5:{s:8:"fileName";s:8:"onin.htm";s:7:"content";s:1229:"<script>
+	{% if have_login %}
+		window.location.href = "/food/order";
+	{% else %}
+		Swal.fire({
+		  title: '您未登入',
+		  text: '請先到會員中心登入，再下訂單',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% endif %}
+</script>
+
+<script>
+	{% if not account1 %}
+		Swal.fire({
+		  title: '未填寫暱稱，電子郵箱或密碼',
+		  text: '所有欄位皆不得為空，請確認是否有確實填寫',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% else %}
+		Swal.fire({
+                title: "註冊成功",
+                text: "已經完成帳號註冊，立即登入吧！",
+				icon: 'success',
+				confirmButtonText: '登入',
+            }).then(function(result) {
+
+				window.location.href = 'http://localhost/food/on'; 
+
+
+            });
+	{% endif %}
+</script>
+
+
+<script>
+	{% if fc %}
+		Swal.fire({
+		  title: '商品已加入購物車',
+		  text: '',
+		  icon: 'success',
+		  confirmButtonText: '完成'
+		});
+	{% endif %}
+</script>
+
+<script>
+	{% if fcc %}
+		Swal.fire({
+		  title: '商品已從購物車移除',
+		  text: '',
+		  icon: 'success',
+		  confirmButtonText: '關閉'
+		});
+	{% endif %}
+</script>
+
+
+";s:5:"mtime";i:1680853541;s:6:"markup";s:1223:"<script>
+	{% if have_login %}
+		window.location.href = "/food/order";
+	{% else %}
+		Swal.fire({
+		  title: '您未登入',
+		  text: '請先到會員中心登入，再下訂單',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% endif %}
+</script>
+
+<script>
+	{% if not account1 %}
+		Swal.fire({
+		  title: '未填寫暱稱，電子郵箱或密碼',
+		  text: '所有欄位皆不得為空，請確認是否有確實填寫',
+		  icon: 'error',
+		  confirmButtonText: '繼續'
+		});
+	{% else %}
+		Swal.fire({
+                title: "註冊成功",
+                text: "已經完成帳號註冊，立即登入吧！",
+				icon: 'success',
+				confirmButtonText: '登入',
+            }).then(function(result) {
+
+				window.location.href = 'http://localhost/food/on'; 
+
+
+            });
+	{% endif %}
+</script>
+
+
+<script>
+	{% if fc %}
+		Swal.fire({
+		  title: '商品已加入購物車',
+		  text: '',
+		  icon: 'success',
+		  confirmButtonText: '完成'
+		});
+	{% endif %}
+</script>
+
+<script>
+	{% if fcc %}
+		Swal.fire({
+		  title: '商品已從購物車移除',
+		  text: '',
+		  icon: 'success',
+		  confirmButtonText: '關閉'
+		});
+	{% endif %}
+</script>";s:4:"code";N;}}

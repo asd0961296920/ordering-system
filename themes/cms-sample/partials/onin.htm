@@ -19,6 +19,18 @@
 		  icon: 'error',
 		  confirmButtonText: '繼續'
 		});
+	{% else %}
+		Swal.fire({
+                title: "註冊成功",
+                text: "已經完成帳號註冊，立即登入吧！",
+				icon: 'success',
+				confirmButtonText: '登入',
+            }).then(function(result) {
+
+				window.location.href = 'http://localhost/food/on'; 
+
+
+            });
 	{% endif %}
 </script>
 

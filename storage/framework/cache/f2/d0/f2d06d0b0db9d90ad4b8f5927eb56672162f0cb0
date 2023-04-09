@@ -1,0 +1,407 @@
+1681026294a:1:{s:12:"site/tab.htm";a:6:{s:8:"fileName";s:12:"site/tab.htm";s:7:"content";s:4653:"==
+<?php
+use dps\food\models\Cook;
+function onStart()
+{
+$this['posts'] = Db::table('dps_food_cook')
+    ->select('*')
+    ->get();	
+}
+?>
+
+
+
+
+
+
+==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="de">主食區</p>
+<div class="row row-cols-1 row-cols-md-4 g-4 row-cols-sm-2">
+{% for post in posts %}
+
+{% if post.type == '主食' %}
+
+
+
+<div class="col">
+
+<div class="card" style="width: 200px;">
+
+        <img style="height: 150px;width: 200px;" src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.imager}}.jpg" class="card-img-top" >
+
+<form id="data_form" class="fdd" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+    <input  type="hidden" name="namefood" value="{{post.name}}">
+    <input  type="hidden" name="cookname" value="{{post.id}}">
+    <input  type="hidden" name="money" value="{{post.money}}">
+    <input  type="hidden" name="user" value="{{ user['name'] }}">
+
+
+<div class="cx" >{{post.name}}</div>
+<div class="cx">${{post.money}}
+</div>
+
+
+
+<div class="d-grid gap-2 kk">
+    <select name="pets" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+<button type="submit" class="btn btn-dark ffce" >加入購物車</button>
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+<p class="de"> 主菜區</p>
+<div class="row row-cols-1 row-cols-md-4 g-4 row-cols-sm-2">
+{% for post in posts %}
+
+{% if post.type == '主菜' %}
+
+
+
+<div class="col">
+
+<div class="card" style="width: 200px;">
+
+        <img style="height: 150px;width: 200px;" src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.imager}}.jpg" class="card-img-top" >
+
+<form id="data_form" class="fdd" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+    <input  type="hidden" name="namefood" value="{{post.name}}">
+    <input  type="hidden" name="cookname" value="{{post.id}}">
+    <input  type="hidden" name="money" value="{{post.money}}">
+    <input  type="hidden" name="user" value="{{ user['name'] }}">
+
+
+<div class="cx" >{{post.name}}</div>
+<div class="cx">${{post.money}}
+</div>
+
+
+
+<div class="d-grid gap-2 kk">
+    <select name="pets" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+<button type="submit" class="btn btn-dark ffce" >加入購物車</button>
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+<p class="de">配菜區</p>
+<div class="row row-cols-1 row-cols-md-4 g-4 row-cols-sm-2">
+{% for post in posts %}
+
+{% if post.type == '配菜' %}
+
+
+
+<div class="col">
+
+<div class="card" style="width: 200px;">
+
+        <img style="height: 150px;width: 200px;" src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.imager}}.jpg" class="card-img-top" >
+
+<form id="data_form" class="fdd" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+    <input  type="hidden" name="namefood" value="{{post.name}}">
+    <input  type="hidden" name="cookname" value="{{post.id}}">
+    <input  type="hidden" name="money" value="{{post.money}}">
+    <input  type="hidden" name="user" value="{{ user['name'] }}">
+
+
+<div class="cx" >{{post.name}}</div>
+<div class="cx">${{post.money}}
+</div>
+
+
+
+<div class="d-grid gap-2 kk">
+    <select name="pets" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+<button type="submit" class="btn btn-dark ffce" >加入購物車</button>
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+";s:5:"mtime";i:1680343804;s:6:"markup";s:4444:"<p class="de">主食區</p>
+<div class="row row-cols-1 row-cols-md-4 g-4 row-cols-sm-2">
+{% for post in posts %}
+
+{% if post.type == '主食' %}
+
+
+
+<div class="col">
+
+<div class="card" style="width: 200px;">
+
+        <img style="height: 150px;width: 200px;" src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.imager}}.jpg" class="card-img-top" >
+
+<form id="data_form" class="fdd" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+    <input  type="hidden" name="namefood" value="{{post.name}}">
+    <input  type="hidden" name="cookname" value="{{post.id}}">
+    <input  type="hidden" name="money" value="{{post.money}}">
+    <input  type="hidden" name="user" value="{{ user['name'] }}">
+
+
+<div class="cx" >{{post.name}}</div>
+<div class="cx">${{post.money}}
+</div>
+
+
+
+<div class="d-grid gap-2 kk">
+    <select name="pets" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+<button type="submit" class="btn btn-dark ffce" >加入購物車</button>
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+<p class="de"> 主菜區</p>
+<div class="row row-cols-1 row-cols-md-4 g-4 row-cols-sm-2">
+{% for post in posts %}
+
+{% if post.type == '主菜' %}
+
+
+
+<div class="col">
+
+<div class="card" style="width: 200px;">
+
+        <img style="height: 150px;width: 200px;" src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.imager}}.jpg" class="card-img-top" >
+
+<form id="data_form" class="fdd" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+    <input  type="hidden" name="namefood" value="{{post.name}}">
+    <input  type="hidden" name="cookname" value="{{post.id}}">
+    <input  type="hidden" name="money" value="{{post.money}}">
+    <input  type="hidden" name="user" value="{{ user['name'] }}">
+
+
+<div class="cx" >{{post.name}}</div>
+<div class="cx">${{post.money}}
+</div>
+
+
+
+<div class="d-grid gap-2 kk">
+    <select name="pets" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+<button type="submit" class="btn btn-dark ffce" >加入購物車</button>
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+<p class="de">配菜區</p>
+<div class="row row-cols-1 row-cols-md-4 g-4 row-cols-sm-2">
+{% for post in posts %}
+
+{% if post.type == '配菜' %}
+
+
+
+<div class="col">
+
+<div class="card" style="width: 200px;">
+
+        <img style="height: 150px;width: 200px;" src="http://clovershopping.epizy.com/food/themes/cms-sample/assets/img/{{post.imager}}.jpg" class="card-img-top" >
+
+<form id="data_form" class="fdd" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
+
+    <input  type="hidden" name="namefood" value="{{post.name}}">
+    <input  type="hidden" name="cookname" value="{{post.id}}">
+    <input  type="hidden" name="money" value="{{post.money}}">
+    <input  type="hidden" name="user" value="{{ user['name'] }}">
+
+
+<div class="cx" >{{post.name}}</div>
+<div class="cx">${{post.money}}
+</div>
+
+
+
+<div class="d-grid gap-2 kk">
+    <select name="pets" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+<button type="submit" class="btn btn-dark ffce" >加入購物車</button>
+
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endfor %}
+</div>";s:4:"code";s:130:"use dps\food\models\Cook;
+function onStart()
+{
+$this['posts'] = Db::table('dps_food_cook')
+    ->select('*')
+    ->get();	
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}

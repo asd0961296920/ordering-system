@@ -13,6 +13,8 @@ function onFormSubmit()
     $password = input('password');
     $address = input('address');
     $serialnumber = date("YmdHis");
+    $this['account1'] = false;
+
     if($account == ''){
 
 		$this['account1'] = false;
@@ -42,7 +44,9 @@ Db::table('dps_shopping_information')->insert([
 
 
 ]);
-echo '完成';
+
+
+//echo '完成';
 
 
 
@@ -64,6 +68,25 @@ echo '完成';
     
     <div class="man">
         <div class="online">
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                  <p><h1 class="display-6">註冊新帳號</h1></p>
+                </blockquote>
+                
+              </figure>
+              <p class="lead">
+                ●所有欄位皆不得為空
+            </p>
+            <p class="lead">
+                ●電子郵件等同登入帳號，格式請填寫正確
+            </p>
+                <p class="lead">
+                ●密碼不低得於９個字元的英數字
+            </p>      
+
+
+
+
         <form id="data_form" data-request="onFormSubmit"data-request-update="onin: '#ajaxDiv'">
 
             <div class="input-group mb-3">
@@ -87,7 +110,8 @@ echo '完成';
                 </div>
                 <input name="password" type="password" class="form-control">
             </div>
-           
+
+
            
            
            
@@ -98,8 +122,10 @@ echo '完成';
                 <div class="input-group-prepend">
                     <span class="input-group-text">連絡電話</span>
                 </div>
-                <input name="cellphone" type="cellphone" class="form-control">
+                <input name="cellphone" type="number"　 class="form-control"　>
             </div>
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">送貨地點：</span>

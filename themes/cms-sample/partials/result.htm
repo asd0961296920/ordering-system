@@ -8,5 +8,37 @@
 		  icon: 'error',
 		  confirmButtonText: '繼續'
 		});
+		
+	{% endif %}
+</script>
+
+
+
+
+<script>
+	{% if  orders %}
+		Swal.fire({
+                title: "訂單已出貨",
+                text: "已出貨訂單歷史可以到訂單查詢頁面查找",
+				icon: 'success',
+				confirmButtonText: '完成',
+            }).then(function(result) {
+
+				location.reload();
+
+
+            });
+	{% endif %}
+</script>
+
+
+<script>
+	{% if  nono %}
+		Swal.fire({
+                title: "未選取訂單",
+                text: "請至少勾選一項訂單",
+				icon: 'error',
+				confirmButtonText: '結束',
+            })
 	{% endif %}
 </script>

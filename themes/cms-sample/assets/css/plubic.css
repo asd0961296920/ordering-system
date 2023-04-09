@@ -341,7 +341,7 @@ margin: 0 auto;
 }
 
 .split{display:block; width:100%; background-position:top right; background-repeat:no-repeat; background-size:cover;
-	background-image:url('https://www.os-templates.com/website-templates/template-demos/free-website-templates/visualart/images/live-demo/background-02.jpg');
+	background-image:url('http://worker.byethost12.com/food/themes/cms-sample/assets/img/background-02.jpg');
 }
 .member{
 text-align: left;
@@ -400,9 +400,12 @@ padding: 32px 0;
 .can2{
     display: none;
 }
+.l h1{border-bottom-style:solid;}
 
+.mm{
+margin-top: 10px;
 
-
+}
 
 
 

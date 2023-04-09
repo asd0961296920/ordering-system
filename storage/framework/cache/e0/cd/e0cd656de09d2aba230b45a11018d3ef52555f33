@@ -1,0 +1,184 @@
+1681026343a:1:{s:19:"site/historical.htm";a:6:{s:8:"fileName";s:19:"site/historical.htm";s:7:"content";s:1997:"==
+<?php
+//將歷史訂單查詢出來
+function onStart()
+{
+    $user = Auth::getUser();
+    $apply = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('accountname', '=', $user->name)
+    ->get();	
+    foreach ($apply as $apply) {
+        $serialnumber = $apply->serialnumber;
+    }
+
+
+
+
+
+    $this['posts'] = Db::table('dps_order_historicalrecord')
+    ->select('*')
+    ->where('username', 'like', $serialnumber)
+    ->get();
+
+    $this['tt'] = Db::table('dps_order_orderdetails')
+    ->select('*')
+    ->get();	
+
+
+
+    
+
+}
+?>
+
+==
+
+<!--歷史訂單-->
+
+
+
+<div class="accordion" id="accordionExample">
+    {% for post in posts %}
+   
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="{{post.orderid}}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cc{{post.orderid}}" aria-expanded="false" aria-controls="cc{{post.orderid}}">
+              訂單編號： {{post.orderid}}  送達地址： {{post.address}}　訂貨日期：{{post.date}}　出貨狀態：{{post.shippingstatus}}
+            </button>
+          </h2>
+          <div id="cc{{post.orderid}}" class="accordion-collapse collapse" aria-labelledby="{{ps.orderid}}" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              {% for tt in tt %}
+              {% if tt.id == post.orderid %}
+<p>菜名:{{tt.chname}} 數量:{{tt.number}}</p>
+           
+{% endif %}
+
+              {% endfor %} 
+            </div>
+        </div>
+      </div>
+
+
+        {% endfor %} 
+  
+
+
+
+
+
+<!--
+
+
+
+        <table>
+    
+        <tr>
+            <td>訂單編號</td>
+        <td>地址</td>
+        <td>日期</td>
+    </tr>
+    {% for post in posts %}
+    <tr>
+        <td>{{post.orderid}}</td>
+    <td>{{post.address}}</td>
+    <td>{{post.date}}</td>
+    </tr>
+    {% endfor %} 
+    </table>
+
+-->
+
+
+
+
+
+
+
+";s:5:"mtime";i:1643088071;s:6:"markup";s:1393:"<!--歷史訂單-->
+
+
+
+<div class="accordion" id="accordionExample">
+    {% for post in posts %}
+   
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="{{post.orderid}}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cc{{post.orderid}}" aria-expanded="false" aria-controls="cc{{post.orderid}}">
+              訂單編號： {{post.orderid}}  送達地址： {{post.address}}　訂貨日期：{{post.date}}　出貨狀態：{{post.shippingstatus}}
+            </button>
+          </h2>
+          <div id="cc{{post.orderid}}" class="accordion-collapse collapse" aria-labelledby="{{ps.orderid}}" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              {% for tt in tt %}
+              {% if tt.id == post.orderid %}
+<p>菜名:{{tt.chname}} 數量:{{tt.number}}</p>
+           
+{% endif %}
+
+              {% endfor %} 
+            </div>
+        </div>
+      </div>
+
+
+        {% endfor %} 
+  
+
+
+
+
+
+<!--
+
+
+
+        <table>
+    
+        <tr>
+            <td>訂單編號</td>
+        <td>地址</td>
+        <td>日期</td>
+    </tr>
+    {% for post in posts %}
+    <tr>
+        <td>{{post.orderid}}</td>
+    <td>{{post.address}}</td>
+    <td>{{post.date}}</td>
+    </tr>
+    {% endfor %} 
+    </table>
+
+-->";s:4:"code";s:563:"//將歷史訂單查詢出來
+function onStart()
+{
+    $user = Auth::getUser();
+    $apply = Db::table('dps_shopping_information')
+    ->select('*')
+    ->where('accountname', '=', $user->name)
+    ->get();	
+    foreach ($apply as $apply) {
+        $serialnumber = $apply->serialnumber;
+    }
+
+
+
+
+
+    $this['posts'] = Db::table('dps_order_historicalrecord')
+    ->select('*')
+    ->where('username', 'like', $serialnumber)
+    ->get();
+
+    $this['tt'] = Db::table('dps_order_orderdetails')
+    ->select('*')
+    ->get();	
+
+
+
+    
+
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}
