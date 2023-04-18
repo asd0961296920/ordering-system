@@ -41,4 +41,6 @@ SimpleXML PHP 擴展
 
 ![image](https://i.imgur.com/dGt0EFh.jpeg)
 
+## 資料庫資料表結構
 
+![image](https://i.imgur.com/EeXezKy.jpeg)
