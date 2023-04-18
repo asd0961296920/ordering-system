@@ -39,6 +39,6 @@ SimpleXML PHP 擴展
 
 ## 網站架構圖
 
-[![image]([picture or gif url](https://imgur.com/a/ekaKonu))](https://imgur.com/a/ekaKonu)
+![image](https://imgur.com/a/ekaKonu)
 
 
