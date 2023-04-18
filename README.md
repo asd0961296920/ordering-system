@@ -34,4 +34,11 @@ SimpleXML PHP 擴展
 某些操作系統發行版可能需要您手動安裝一些必需的 PHP 擴展。
 
 ## 使用xampp-windows-x64-7.4.21-0-VC15 版本
+
 檔案最外層資料夾請使用food檔名
+
+## 網站架構圖
+
+[![image]([picture or gif url](https://imgur.com/a/ekaKonu))](https://imgur.com/a/ekaKonu)
+
+
