@@ -39,6 +39,6 @@ SimpleXML PHP 擴展
 
 ## 網站架構圖
 
-![image](https://imgur.com/a/ekaKonu)
+![image](https://i.imgur.com/dGt0EFh.jpeg)
 
 
